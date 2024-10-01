@@ -1,12 +1,26 @@
-# Initialise the list of To-do tasks
+# Initialisation of required variables:
 todos = []
+user_text = ""
+todo = ""
 
-# Obtain the user's inputs and add them to the list
-# Displays the list of options in list format
+# Fetch the user's input, and perform the corresponding task:
+# add - Let's the user add one or multiple tasks to their to-do list
+# show - The user's to-do list will be printed
+# exit - The program terminates
 while True:
-    user_text = input("Enter a todo: ")
-    if user_text != 'exit':
-        todos.append(user_text)
-    if user_text == "exit":
+    user_text = input("Type add, show or exit to access the relevant areas: ")
+    
+    if user_text == 'add':
+        while todo != 'Done':
+            todo = input("Enter a task: ")
+            if todo == 'Done':
+                break
+            todos.append(todo.capitalize())
+    elif user_text == 'show':
         print(todos)
+    elif user_text == 'exit':
         break
+    else:
+        print('That command is not acceptable')
+        
+print('It was fun working with you. Goodbye for now!')
