@@ -9,18 +9,19 @@ todo = ""
 # exit - The program terminates
 while True:
     user_text = input("Type add, show or exit to access the relevant areas: ")
-    user_text = user_text.strip()
+    user_text = user_text.strip().capitalize()
     
-    if user_text == 'add':
+    if user_text == 'Add':
         while todo != 'Done':
             todo = input("Enter a task: ")
             if todo == 'Done':
+                todo = ""
                 break
             todos.append(todo.capitalize())
-    elif user_text == 'show':
+    elif user_text == 'Show':
         for item in todos:
             print(item)
-    elif user_text == 'exit':
+    elif user_text == 'Exit':
         break
     else:
         print('That command is not acceptable')
