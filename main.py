@@ -9,6 +9,7 @@ todo = ""
 # exit - The program terminates
 while True:
     user_text = input("Type add, show or exit to access the relevant areas: ")
+    user_text = user_text.strip()
     
     if user_text == 'add':
         while todo != 'Done':
@@ -17,7 +18,8 @@ while True:
                 break
             todos.append(todo.capitalize())
     elif user_text == 'show':
-        print(todos)
+        for item in todos:
+            print(item)
     elif user_text == 'exit':
         break
     else:
